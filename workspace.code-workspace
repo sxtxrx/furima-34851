@@ -2,6 +2,24 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../Downloads/furimaの素材/views"
+		},
+		{
+			"path": "../../Downloads/furimaの素材/views/devise"
+		},
+		{
+			"path": "../../Downloads/furimaの素材/views/items"
+		},
+		{
+			"path": "../../Downloads/furimaの素材/views/layouts"
+		},
+		{
+			"path": "../../Downloads/furimaの素材/views/orders"
+		},
+		{
+			"path": "../../Downloads/furimaの素材/views/shared"
 		}
 	],
 	"settings": {}
