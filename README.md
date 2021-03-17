@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 #users table
 
 | Column            | Type    | Options     |
@@ -71,6 +71,4 @@ cards table
 |item_id            |reference  | foreign key |
 ### Association
 belongs_to :orders
-=======
-# README
->>>>>>> Stashed changes
+
