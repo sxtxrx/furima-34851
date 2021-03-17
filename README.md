@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 #users table
 
 | Column            | Type    | Options     |
@@ -73,4 +72,3 @@ cards table
 belongs_to :orders
 =======
 # README
->>>>>>> Stashed changes
