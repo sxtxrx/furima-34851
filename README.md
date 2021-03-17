@@ -13,7 +13,7 @@
 
 ### Association
 has_many :orders
-
+has_many :items
 items table
 | Column            | Type          | Options      |
 | --------          | ------        | -----------  | 
@@ -24,11 +24,12 @@ items table
 |condition_id       | integer       | null: false  |
 |ship_cost_id       | integer       | null: false  | 
 |preference_id      | integer       | null: false  |
-|ship_days_id       | integer       | null: false  | 
+|ship_day_id       | integer       | null: false  | 
 |user               | reference     |foreign key :true| 
 
 ### Association
 has_one :order
+belongs_to :user
 
 orders table
 | Column            | Type       | Options    |
@@ -39,7 +40,7 @@ orders table
 |address            |string      |null: false | 
 |building_name      | string     |            |     
 |phone_number       | string     |null: false |
-|item               |reference|  |foreign key |
+|history            |reference|  |foreign key |
  
 ### Association
 belongs_to :history
@@ -50,4 +51,4 @@ histories table
 |user            | reference | foreign key: true |
 |item            | reference | foreign key :true|
 ### Association
-belongs_to :order
+has_one :order
