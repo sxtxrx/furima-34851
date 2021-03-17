@@ -12,11 +12,7 @@
 |birthday           | date    |null: false  |
 
 ### Association
-has_many :items
 has_many :orders
-
-
-
 
 items table
 | Column            | Type          | Options      |
@@ -24,32 +20,29 @@ items table
 |name               | string        | null: false  |
 |description        | text          | null: false  | 
 |price              | integer       | null: false  |
-|category           | active hash   | null: false  |     
-|condition          | active hash   | null: false  |
-|ship_cost          | active hash   | null: false  | 
-|ship_from          | active hash   | null: false  |
-|ship_days          | active hash   | null: false  | 
+|category_id        | integer       | null:false|     
+|condition_id       | integer       | null: false  |
+|ship_cost_id       | integer       | null: false  | 
+|preference_id      | integer       | null: false  |
+|ship_days_id       | integer       | null: false  | 
 |user               | reference     |foreign key :true| 
 
 ### Association
-belongs_to :user
-has_one    :order
+has_one :order
 
 orders table
 | Column            | Type       | Options    |
 | --------          | ------     | ---------- |
-| post_code         | integer    |null: false |
-| preference        | active hash|null: false |
-| city              | text       |null: false |
-|address            | text       |null: false | 
-|building_name      | string     |null: false |     
-|phone_number       | integer    |null: false |
+| post_code         |string      |null: false |
+|preference_id      | integer    |null: false |
+| city              |string      |null: false |
+|address            |string      |null: false | 
+|building_name      | string     |            |     
+|phone_number       | string     |null: false |
 |item               |reference|  |foreign key |
  
 ### Association
-belongs_to :user
-belongs_to :item
-has_one    :history
+belongs_to :history
 
 histories table
 | Column         | Type      | Options     |
@@ -58,4 +51,3 @@ histories table
 |item            | reference | foreign key :true|
 ### Association
 belongs_to :order
-
