@@ -1,13 +1,13 @@
 <mxfile>
     <diagram id="b6K1RpbfClDhmfOCl-DO" name="ページ1">
-        <mxGraphModel dx="369" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1139" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="users table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="50" y="20" width="230" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="nickname string notnulll&#10;email  string not null&#10;passeword string not null&#10;first_name string not null&#10;first_name_kana string not null&#10;firmily_name string not null&#10;firmily_name_kana string not null&#10;birthday not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="2" vertex="1">
+                <mxCell id="3" value="nickname                 string     notnulll&#10;email                        string     not null&#10;passeword               string     not null&#10;first_name                string     not null&#10;first_name_kana      string      not null&#10;firmily_name            string     not null&#10;firmily_name_kana   string   not null&#10;birthday                  active hash.  not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="2" vertex="1">
                     <mxGeometry y="26" width="230" height="164" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;" parent="2" edge="1">
@@ -19,19 +19,19 @@
                 <mxCell id="6" value="orders table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="330" y="280" width="266" height="264" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="post_code integer not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                <mxCell id="7" value="post_code             integer         not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
                     <mxGeometry y="26" width="266" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="preference active hash not null&#10;city string not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                <mxCell id="8" value="preference            active hash  not null&#10;city                        string           not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
                     <mxGeometry y="56" width="266" height="54" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" value="address text not null&#10;building_name text not null&#10;phone_number integernot null&#10;user reference forign key&#10;item reference&#10;preference active hash not null&#10;city string not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                <mxCell id="35" value="address                text              not null&#10;building_name     text               not null&#10;phone_number    integer.         not null&#10;user                     reference      forign key&#10;item reference&#10;preference active hash not null&#10;city string not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
                     <mxGeometry y="110" width="266" height="154" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="items table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="640" y="20" width="230" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="image notnull  activestrage&#10;name string not null&#10;description text not null&#10;category      active hash not null&#10;condition     active hash not null&#10;ship_cost    active hash not null&#10;ship_from    active hash not null&#10;ship_days    active hash not null&#10;price not null&#10;salse_fee not null&#10;sales_profit not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="28" vertex="1">
+                <mxCell id="29" value="image  activestrage&#10;name                string not null&#10;description       text not null&#10;category           active hash not null&#10;condition          active hash not null&#10;ship_cost         active hash not null&#10;ship_from        active hash not null&#10;ship_days         active hash not null&#10;price                  integer not null&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="28" vertex="1">
                     <mxGeometry y="26" width="230" height="164" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;" parent="1" target="29" edge="1">
