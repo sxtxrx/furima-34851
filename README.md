@@ -14,7 +14,7 @@
 ### Association
 has_many :orders
 has_many :items
-items table
+#items_table
 | Column            | Type          | Options      |
 | --------          | ------        | -----------  | 
 |name               | string        | null: false  |
@@ -31,7 +31,7 @@ items table
 has_one :order
 belongs_to :user
 
-orders table
+#orders table
 | Column            | Type       | Options    |
 | --------          | ------     | ---------- |
 | post_code         |string      |null: false |
@@ -40,12 +40,12 @@ orders table
 |address            |string      |null: false | 
 |building_name      | string     |            |     
 |phone_number       | string     |null: false |
-|history            |reference|  |foreign key |
+|history            |reference   |foreign key |
  
 ### Association
 belongs_to :history
 
-histories table
+＃histories table
 | Column         | Type      | Options     |
 | --------       | ------    | ----------- |
 |user            | reference | foreign key: true |
