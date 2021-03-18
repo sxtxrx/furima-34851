@@ -1,27 +1,54 @@
-# README
+#users table
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column            | Type    | Options     |
+| --------          | ------  | ----------- |
+| nickname          | string  |null: false  |
+| email             | string  |null: false ,unique: true|
+| encrypted_password| string  |null: false  | 
+|first_name         | string  |null: false  | 
+|first_name_kana    | string  |null: false  |     
+|family_name        | string  |null: false  |
+|family_name_kana   | string  |null: false  | 
+|birthday           | date    |null: false  |
 
-Things you may want to cover:
+### Association
+has_many :orders
+has_many :items
+#items_table
+| Column            | Type          | Options      |
+| --------          | ------        | -----------  | 
+|name               | string        | null: false  |
+|description        | text          | null: false  | 
+|price              | integer       | null: false  |
+|category_id        | integer       | null:false|     
+|condition_id       | integer       | null: false  |
+|ship_cost_id       | integer       | null: false  | 
+|preference_id      | integer       | null: false  |
+|ship_day_id       | integer       | null: false  | 
+|user               | reference     |foreign key :true| 
 
-* Ruby version
+### Association
+has_one :order
+belongs_to :user
 
-* System dependencies
+#orders table
+| Column            | Type       | Options    |
+| --------          | ------     | ---------- |
+| post_code         |string      |null: false |
+|preference_id      | integer    |null: false |
+| city              |string      |null: false |
+|address            |string      |null: false | 
+|building_name      | string     |            |     
+|phone_number       | string     |null: false |
+|history            |reference   |foreign key |
+ 
+### Association
+belongs_to :history
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-
+＃histories table
+| Column         | Type      | Options     |
+| --------       | ------    | ----------- |
+|user            | reference | foreign key: true |
+|item            | reference | foreign key :true|
+### Association
+has_one :order
