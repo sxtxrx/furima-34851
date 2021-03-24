@@ -11,13 +11,16 @@ has_one_attached :image
 with_options presence: true do
 validates :name
 validates :description
-validates :category_id
-validates :condition_id
-validates :ship_cost_id
-validates :prefecture_id
-validates :ship_day_id
+validates :image
 end
-# validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to:  9,999,999}
-validates :prefecture_id, numericality: {other_than: 0}
 
+with_options presence: true,numericality:{other_than: 0 ,message: "can't be blank"} do
+    validates :category_id
+    validates :condition_id
+    validates :ship_cost_id
+    validates :prefecture_id
+    validates :ship_day_id
+end
+
+validates :price,  numericality: {presence: true,only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is invalid"}
 end
