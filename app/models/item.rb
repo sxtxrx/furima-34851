@@ -11,6 +11,8 @@ has_one_attached :image
 with_options presence: true do
 validates :name
 validates :description
+validates :image
+
 end
 
 with_options presence: true,numericality:{other_than: 0 ,message: "can't be blank"} do
