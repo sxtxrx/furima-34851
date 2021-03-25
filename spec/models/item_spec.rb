@@ -42,8 +42,29 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors.full_messages).to include("Prefecture can't be blank")
         end
+        it 'category_idが0の場合出品できない' do
+          @item.category_id = 0
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Category can't be blank")
+        end
+        it 'ship_cost_idが0の場合出品できない' do
+          @item.ship_cost_id = 0
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Ship cost can't be blank")
+        end
+        it 'ship_day_idが0の場合出品できない' do
+          @item.ship_day_id = 0
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Ship day can't be blank")
+        end
+        
+        it 'prefecture_idが0の場合出品できない' do
+          @item.prefecture_id = 0
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        end
         it '価格が300~9,999,999の間でないと登録できないこと' do
-          @item.price = '299'&&'10000000'
+          @item.price = 299 && 10000000
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is invalid")
 
@@ -54,7 +75,17 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include("Price is invalid")
 
         end
+        it '価格は全角文字だと登録できないこと' do
+          @item.price = '１２３４'
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Price is invalid")
+        end
+        it '価格は半角英数混合だと登録できないこと' do
+          @item.price = 'price123'
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Price is invalid")
 
+        end
     
   end
  end
