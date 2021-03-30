@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_093958) do
+ActiveRecord::Schema.define(version: 2021_03_29_053904) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -65,7 +65,8 @@ ActiveRecord::Schema.define(version: 2021_03_28_093958) do
     t.string "building_name", null: false
     t.string "phone_number", null: false
     t.bigint "history_id"
-    t.index ["history_id"], name: "index_orders_on_history_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,5 +91,4 @@ ActiveRecord::Schema.define(version: 2021_03_28_093958) do
   add_foreign_key "histories", "items"
   add_foreign_key "histories", "users"
   add_foreign_key "items", "users"
-  add_foreign_key "orders", "histories"
 end
