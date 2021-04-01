@@ -13,6 +13,10 @@ RSpec.describe OrderHistory, type: :model do
       it '建物名は空でも保存できること' do
         expect(@order_history).to be_valid
       end
+      it "priceとtokenがあれば保存ができること" do
+        expect(@order_history).to be_valid
+      end
+      
     end
 
     context '商品購入がうまくいかないとき' do
@@ -56,7 +60,11 @@ RSpec.describe OrderHistory, type: :model do
         @order_history.valid?
         expect(@order_history.errors.full_messages).to include("Phone number is not a number")
       end
-
+      it "tokenが空では登録できないこと" do
+        @order_history.token = nil
+        @order_history.valid?
+        expect(@order_history.errors.full_messages).to include("Token can't be blank")
+      end
       
     end
   end
