@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   before_action :set_order, only: [:index,:create]
+  before_action :move_to_index, only: [:create]
 
 
 
@@ -39,5 +40,8 @@ class OrdersController < ApplicationController
       card: order_params[:token],    # カードトークン
       currency: 'jpy'                 # 通貨の種類（日本円）
     )
+  end
+  def move_to_index
+    redirect_to action: :index unless current_user.id == @item.user_id
   end
 end
