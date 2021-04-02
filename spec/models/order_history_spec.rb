@@ -9,16 +9,14 @@ RSpec.describe OrderHistory, type: :model do
       sleep 0.1
     end
     context '商品購入がうまくいくとき' do
-      it '郵便番号、都道府県、市町村、番地、電話番号が存在すれば登録できること' do
+      it '全ての情報がが存在すれば登録できること' do
         expect(@order_history).to be_valid
       end
       it '建物名は空でも保存できること' do
         @order_history.building_name = ''
         expect(@order_history).to be_valid
       end
-      it 'priceとtokenがあれば保存ができること' do
-        expect(@order_history).to be_valid
-      end
+      
     end
 
     context '商品購入がうまくいかないとき' do
@@ -38,7 +36,7 @@ RSpec.describe OrderHistory, type: :model do
         expect(@order_history.errors.full_messages).to include('Post code is invalid')
       end
       it '都道府県がないと登録できないこと' do
-        @order_history.prefecture_id = '0'
+        @order_history.prefecture_id = 0
         @order_history.valid?
         expect(@order_history.errors.full_messages).to include("Prefecture can't be blank")
       end
