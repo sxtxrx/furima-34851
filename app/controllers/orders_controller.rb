@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order, only: [:index, :create]
-  before_action :move_to_index, only: [:create, :index]
+  before_action :move_to_index
 
   def index
     @order_history = OrderHistory.new
@@ -41,10 +41,6 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    if current_user.id == @item.user_id || @item.history.present?
-      redirect_to root_path
-    else
-      current_user.id
-    end
+    redirect_to root_path if current_user.id == @item.user_id || @item.history.present?
   end
 end
