@@ -10,10 +10,12 @@
 |family_name        | string  |null: false  |
 |family_name_kana   | string  |null: false  | 
 |birthday           | date    |null: false  |
-
 ### Association
 has_many :orders
 has_many :items
+
+
+
 #items_table
 | Column            | Type          | Options      |
 | --------          | ------        | -----------  | 
@@ -26,24 +28,27 @@ has_many :items
 |preference_id      | integer       | null: false  |
 |ship_day_id       | integer       | null: false  | 
 |user               | reference     |foreign key :true| 
-
 ### Association
 has_one :order
 belongs_to :user
+
+
 
 #orders table
 | Column            | Type       | Options    |
 | --------          | ------     | ---------- |
 | post_code         |string      |null: false |
-|preference_id      | integer    |null: false |
+|prefecture_id      | integer    |null: false |
 | city              |string      |null: false |
 |address            |string      |null: false | 
 |building_name      | string     |            |     
 |phone_number       | string     |null: false |
 |history            |reference   |foreign key |
- 
 ### Association
 belongs_to :history
+
+
+
 
 ＃histories table
 | Column         | Type      | Options     |
