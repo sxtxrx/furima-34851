@@ -1,4 +1,4 @@
-#users table
+#　users table
 
 | Column            | Type    | Options     |
 | --------          | ------  | ----------- |
@@ -16,7 +16,7 @@ has_many :items
 
 
 
-#items_table
+#　items_table
 | Column            | Type          | Options      |
 | --------          | ------        | -----------  | 
 |name               | string        | null: false  |
@@ -34,7 +34,7 @@ belongs_to :user
 
 
 
-#orders table
+#　orders table
 | Column            | Type       | Options    |
 | --------          | ------     | ---------- |
 | post_code         |string      |null: false |
@@ -50,7 +50,7 @@ belongs_to :history
 
 
 
-＃histories table
+＃　histories table
 | Column         | Type      | Options     |
 | --------       | ------    | ----------- |
 |user            | reference | foreign key: true |
